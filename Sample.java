@@ -12,6 +12,8 @@ public class Sample {
     public int daysInYear = 360;
     public int hoursInWeek = 168;
 
+    // Getter setters here..
+
     public List<Testcase> find(User user) {
         return UserDataSampler.fetchTestData(user.getId());
     }
