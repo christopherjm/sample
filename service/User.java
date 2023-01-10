@@ -15,4 +15,8 @@ public class User {
     public void setRole(String user) {
 
     }
+
+    public int getAge() {
+        return 0;
+    }
 }

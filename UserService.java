@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.Date;
 import java.util.List;
 
-public class Sample {
+public class UserService {
 
     public Date d;
     public Account[] AccountList;
@@ -29,4 +29,10 @@ public class Sample {
         List<Privilege> privileges = GroupDataSampler.getGroup(group.getId()).getPrivileges();
         return privileges;
     }
+
+    public void processUnder18(User user) {
+        if (user.getAge() > 18) {
+            UnderagedUserProcessor.process(user);
+        }
+    };
 }
