@@ -15,22 +15,18 @@ public class Sample {
     // Getter setters here..
 
     public List<Testcase> find(User user) {
-        return UserDataSampler.fetchTestData(user.getId());
+        return UserRepo.getUser(user.getId());
     }
 
     public User saveUser(User user){
         if(user.isAdmin){
             user.setRole(UserRole.ADMIN);
         }
-        return UserRepositoryMock.save(user);
+        return UserRepo.save(user);
     }
 
     public List<Privilege> getPriviledges(Group group) {
-        List<Privilege> privileges = GroupDataSampler.getGroup(group.getId()).getUser().getRole().getPrivileges();
+        List<Privilege> privileges = GroupDataSampler.getGroup(group.getId()).getPrivileges();
         return privileges;
     }
-
-    public void saveIfUserUnder18() {
-        // Do process here...
-    };
 }
