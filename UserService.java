@@ -14,19 +14,19 @@ public class UserService {
 
     // Getter setters here..
 
-    public List<Testcase> find(User user) {
+    public List<User> find(User user) {
         return UserRepo.getUser(user.getId());
     }
 
     public User saveUser(User user){
-        if(user.isAdmin){
+        if(Session.getCurrentSessionAuth() == "ADMIN"){
             user.setRole(UserRole.ADMIN);
         }
         return UserRepo.save(user);
     }
 
     public List<Privilege> getPriviledges(Group group) {
-        List<Privilege> privileges = GroupDataSampler.getGroup(group.getId()).getPrivileges();
+        List<Privilege> privileges = GroupRepo.getGroup(group.getId()).getPrivileges();
         return privileges;
     }
 

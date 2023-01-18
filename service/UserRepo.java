@@ -3,7 +3,7 @@ package service;
 import java.util.List;
 
 public class UserRepo {
-    public static List<Testcase> getUser(Object id) {
+    public static List<User> getUser(Object id) {
         return null;
     }
 
