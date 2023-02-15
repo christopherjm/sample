@@ -1,6 +1,9 @@
 package service;
 
-
+/**
+ * The user of the system
+ * @author christophermariano
+ */
 public class User {
     /**
      * @returns <code>true</code> if user is admin, otherwise <code>false</code>
