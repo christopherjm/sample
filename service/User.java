@@ -3,6 +3,7 @@ package service;
 /**
  * The user of the system
  * @author christophermariano
+ * @since v1.0
  */
 public class User {
     /**
